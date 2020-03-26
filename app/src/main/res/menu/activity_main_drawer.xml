@@ -3,36 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_reviews" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
-    </group>
-
-    <item android:title="Communicate">
+    <group />
+    <item android:title="Current game">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:id="@+id/nav_switchgame"
+                android:icon="@android:drawable/stat_sys_warning"
+                android:title="@string/menu_switchgame" />
         </menu>
     </item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/dashboard"
+            android:title="@string/menu_dashboard" />
+        <item
+            android:id="@+id/nav_ratings"
+            android:icon="@drawable/star"
+            android:title="@string/menu_ratings" />
+        <item
+            android:id="@+id/nav_reviews"
+            android:icon="@drawable/review"
+            android:title="@string/menu_reviews" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/settings3"
+            android:title="@string/menu_settings" />
+    </group>
 
 </menu>
