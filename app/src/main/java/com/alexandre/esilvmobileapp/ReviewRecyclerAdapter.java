@@ -18,9 +18,9 @@ public class ReviewRecyclerAdapter extends RecyclerView.Adapter<ReviewRecyclerAd
     Context context;
     List<Review> reviewList;
 
-    public ReviewRecyclerAdapter(Context context, List<Review> movieList) {
+    public ReviewRecyclerAdapter(Context context, List<Review> reviewList) {
         this.context = context;
-        this.reviewList = movieList;
+        this.reviewList = reviewList;
     }
 
     public void setReviewList(List<Review> reviewList) {
@@ -30,7 +30,7 @@ public class ReviewRecyclerAdapter extends RecyclerView.Adapter<ReviewRecyclerAd
 
     @Override
     public ReviewRecyclerAdapter.MyviewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.review_recycler_view,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.review_recyclerview_adapter,parent,false);
         return new MyviewHolder(view);
     }
 

@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/rvTitle"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="56dp"
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:padding="5dp"
@@ -19,7 +19,7 @@
     <TextView
         android:id="@+id/rvDescription"
         android:layout_width="279dp"
-        android:layout_height="80dp"
+        android:layout_height="194dp"
         android:layout_weight="1"
         android:gravity="center_horizontal"
         android:text="TextView" />

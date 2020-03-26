@@ -63,10 +63,7 @@ public class ReviewsFragment extends Fragment {
         call.enqueue(new Callback<List<Review>>() {
             @Override
             public void onResponse(Call<List<Review>> call, Response<List<Review>> response) {
-                Log.d("TAG", "TESST");
-                Log.d("TAG", "onResponse: " + response.body());
                 reviewList = response.body();
-                Log.d("TAG","TESST2");
                 Log.d("TAG","Response = "+ reviewList);
                 recyclerAdapter.setReviewList(reviewList);
             }

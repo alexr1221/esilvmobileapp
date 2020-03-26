@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface ApiInterface {
 
-    @GET("mygame/users/reviews?steam=true&googlePlay=true")
+    @GET("mygame/reviews?steam=true&googlePlay=true")
     Call<List<Review>> getReviews();
 }
