@@ -9,4 +9,7 @@ public interface ApiInterface {
 
     @GET("users/mygame/reviews?steam=true&googlePlay=true")
     Call<List<Review>> getReviews();
+
+    @GET("games")
+    Call<List<Game>> getGames();
 }

@@ -1,4 +1,4 @@
-/*package com.alexandre.esilvmobileapp;
+package com.alexandre.esilvmobileapp;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -23,29 +23,26 @@ public class GameRecyclerAdapter extends RecyclerView.Adapter<GameRecyclerAdapte
         this.gameList = gameList;
     }
 
-    public void setReviewList(List<Game> reviewList) {
+    public void setGameList(List<Game> reviewList) {
         this.gameList = reviewList;
         notifyDataSetChanged();
     }
 
     @Override
     public GameRecyclerAdapter.MyviewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.review_recyclerview_adapter,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.game_recyclerview_adapter,parent,false);
         return new MyviewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(GameRecyclerAdapter.MyviewHolder holder, int position) {
-        holder.title.setText(gameList.get(position).getTitle() + "   (" + gameList.get(position).getPlatform().toUpperCase() +
-                ")");
-        holder.description.setText(gameList.get(position).getDescription());
-        //Glide.with(context).load(reviewList.get(position).getDescription()).apply(RequestOptions.centerCropTransform()).into(holder.description);
+        holder.title.setText(gameList.get(position).getTitle());
     }
 
     @Override
     public int getItemCount() {
-        if(reviewList != null){
-            return reviewList.size();
+        if(gameList != null){
+            return gameList.size();
         }
         return 0;
 
@@ -53,12 +50,10 @@ public class GameRecyclerAdapter extends RecyclerView.Adapter<GameRecyclerAdapte
 
     public class MyviewHolder extends RecyclerView.ViewHolder {
         TextView title;
-        TextView description;
 
         public MyviewHolder(View itemView) {
             super(itemView);
-            title = (TextView)itemView.findViewById(R.id.rvTitle);
-            description = (TextView) itemView.findViewById(R.id.rvDescription);
+            title = (TextView)itemView.findViewById(R.id.gTitle);
         }
     }
-}*/
+}

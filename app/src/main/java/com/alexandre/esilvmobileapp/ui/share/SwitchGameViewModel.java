@@ -10,7 +10,7 @@ public class SwitchGameViewModel extends ViewModel {
 
     public SwitchGameViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
+        mText.setValue("Switch the game here");
     }
 
     public LiveData<String> getText() {
