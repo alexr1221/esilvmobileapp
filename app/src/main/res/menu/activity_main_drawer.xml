@@ -10,6 +10,10 @@
                 android:id="@+id/nav_switchgame"
                 android:icon="@android:drawable/stat_sys_warning"
                 android:title="@string/menu_switchgame" />
+            <item
+                android:id="@+id/nav_stores"
+                android:icon="@drawable/store3"
+                android:title="@string/menu_stores" />
         </menu>
     </item>
     <group android:checkableBehavior="single">
