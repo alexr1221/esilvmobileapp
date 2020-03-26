@@ -1,16 +1,16 @@
-package com.alexandre.esilvmobileapp.ui.share;
+package com.alexandre.esilvmobileapp.ui.gallery;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class ReviewsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public ReviewsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
+        mText.setValue("This is gallery fragment");
     }
 
     public LiveData<String> getText() {

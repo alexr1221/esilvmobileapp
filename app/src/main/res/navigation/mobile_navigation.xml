@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_reviews"
-        android:name="com.alexandre.esilvmobileapp.ui.gallery.GalleryFragment"
+        android:name="com.alexandre.esilvmobileapp.ui.gallery.ReviewsFragment"
         android:label="@string/menu_reviews"
         tools:layout="@layout/fragment_reviews" />
 
@@ -31,9 +31,9 @@
 
     <fragment
         android:id="@+id/nav_switchgame"
-        android:name="com.alexandre.esilvmobileapp.ui.share.ShareFragment"
+        android:name="com.alexandre.esilvmobileapp.ui.share.SwitchGameFragment"
         android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
+        tools:layout="@layout/fragment_switchgame" />
 
     <fragment
         android:id="@+id/nav_send"

@@ -1,4 +1,4 @@
-package com.alexandre.esilvmobileapp.ui.gallery;
+package com.alexandre.esilvmobileapp.ui.share;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.alexandre.esilvmobileapp.R;
 
-public class GalleryFragment extends Fragment {
+public class SwitchGameFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private SwitchGameViewModel switchGameViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_reviews, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        switchGameViewModel =
+                ViewModelProviders.of(this).get(SwitchGameViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_switchgame, container, false);
+        final TextView textView = root.findViewById(R.id.text_share);
+        switchGameViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
