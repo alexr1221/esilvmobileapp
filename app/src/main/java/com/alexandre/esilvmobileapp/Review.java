@@ -7,6 +7,9 @@ public class Review {
     @SerializedName("title")
     private String title;
 
+    @SerializedName("platform")
+    private String platform;
+
     @SerializedName("description")
     private String description;
 
@@ -29,5 +32,9 @@ public class Review {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPlatform() {
+        return platform;
     }
 }

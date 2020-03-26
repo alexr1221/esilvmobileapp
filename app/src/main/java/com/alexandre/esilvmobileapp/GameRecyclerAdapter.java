@@ -1,4 +1,4 @@
-package com.alexandre.esilvmobileapp;
+/*package com.alexandre.esilvmobileapp;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,32 +13,32 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
-public class ReviewRecyclerAdapter extends RecyclerView.Adapter<ReviewRecyclerAdapter.MyviewHolder> {
+public class GameRecyclerAdapter extends RecyclerView.Adapter<GameRecyclerAdapter.MyviewHolder> {
 
     Context context;
-    List<Review> reviewList;
+    List<Game> gameList;
 
-    public ReviewRecyclerAdapter(Context context, List<Review> reviewList) {
+    public GameRecyclerAdapter(Context context, List<Game> gameList) {
         this.context = context;
-        this.reviewList = reviewList;
+        this.gameList = gameList;
     }
 
-    public void setReviewList(List<Review> reviewList) {
-        this.reviewList = reviewList;
+    public void setReviewList(List<Game> reviewList) {
+        this.gameList = reviewList;
         notifyDataSetChanged();
     }
 
     @Override
-    public ReviewRecyclerAdapter.MyviewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public GameRecyclerAdapter.MyviewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.review_recyclerview_adapter,parent,false);
         return new MyviewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ReviewRecyclerAdapter.MyviewHolder holder, int position) {
-        holder.title.setText(reviewList.get(position).getTitle() + "   (" + reviewList.get(position).getPlatform().toUpperCase() +
+    public void onBindViewHolder(GameRecyclerAdapter.MyviewHolder holder, int position) {
+        holder.title.setText(gameList.get(position).getTitle() + "   (" + gameList.get(position).getPlatform().toUpperCase() +
                 ")");
-        holder.description.setText(reviewList.get(position).getDescription());
+        holder.description.setText(gameList.get(position).getDescription());
         //Glide.with(context).load(reviewList.get(position).getDescription()).apply(RequestOptions.centerCropTransform()).into(holder.description);
     }
 
@@ -61,4 +61,4 @@ public class ReviewRecyclerAdapter extends RecyclerView.Adapter<ReviewRecyclerAd
             description = (TextView) itemView.findViewById(R.id.rvDescription);
         }
     }
-}
+}*/

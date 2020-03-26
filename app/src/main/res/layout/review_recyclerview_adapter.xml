@@ -1,26 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ctnLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clipToPadding="false"
-    android:paddingVertical="10dp"
-    android:paddingLeft="60dp"
-    android:paddingRight="15dp">
+    android:paddingVertical="10dp">
 
-    <TextView
-        android:id="@+id/rvTitle"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:padding="5dp"
-        android:text="TextView" />
 
-    <TextView
-        android:id="@+id/rvDescription"
-        android:layout_width="279dp"
-        android:layout_height="194dp"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:text="TextView" />
-</LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/rvTitle"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="12dp"
+            android:paddingHorizontal="10dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@id/rvDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/rvDescription"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="44dp"
+            android:paddingHorizontal="10dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/rvTitle"
+            app:layout_constraintTop_toBottomOf="@id/rvTitle"
+            app:layout_constraintVertical_bias="0" />
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
