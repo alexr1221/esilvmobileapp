@@ -58,7 +58,7 @@ public class ReviewsFragment extends Fragment {
         recyclerView.setAdapter(recyclerAdapter);
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<List<Review>> call = apiService.getReviews();
+        Call<List<Review>> call = apiService.getReviews("users/" + MainActivity.currentGame +"/reviews?steam=true&googlePlay=true");
 
         call.enqueue(new Callback<List<Review>>() {
             @Override

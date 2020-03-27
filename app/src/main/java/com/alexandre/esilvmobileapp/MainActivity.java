@@ -1,11 +1,12 @@
 package com.alexandre.esilvmobileapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import android.util.Log;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -19,17 +20,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         return instance;
     }
+
+    public static String currentGame = "mygame2";
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -62,12 +56,20 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_dashboard, R.id.nav_reviews, R.id.nav_ratings,
-                R.id.nav_settings, R.id.nav_switchgame, R.id.nav_send)
+                R.id.nav_settings, R.id.nav_switchgame, R.id.nav_stores)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        String savedCurrentGame = sharedPref.getString("current_game", null);
+        if (savedCurrentGame != null){
+            currentGame = savedCurrentGame;
+        }
+
     }
 
     @Override

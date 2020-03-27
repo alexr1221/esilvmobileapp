@@ -1,9 +1,11 @@
 package com.alexandre.esilvmobileapp;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,10 +52,22 @@ public class GameRecyclerAdapter extends RecyclerView.Adapter<GameRecyclerAdapte
 
     public class MyviewHolder extends RecyclerView.ViewHolder {
         TextView title;
+        Button button;
 
         public MyviewHolder(View itemView) {
             super(itemView);
             title = (TextView)itemView.findViewById(R.id.gTitle);
+            button = (Button) itemView.findViewById(R.id.gButton);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MainActivity.currentGame = title.getText().toString();
+                    SharedPreferences sharedPref = MainActivity.getInstance().getApplicationContext().getSharedPreferences("MyPref", Context.MODE_WORLD_WRITEABLE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("current_game", "string value");
+                    editor.commit();
+                }
+            });
         }
     }
 }
