@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -73,6 +74,46 @@ public class ReviewsFragment extends Fragment {
                 Log.d("TAG","Response = "+t.toString());
             }
         });
+
+
+        // search
+
+        SearchView searchView = (SearchView)root.findViewById(R.id.searchRev);
+        searchView.setOnQueryTextListener(
+                new SearchView.OnQueryTextListener() {
+
+                    // Override onQueryTextSubmit method
+                    // which is call
+                    // when submitquery is searched
+
+                    @Override
+                    public boolean onQueryTextSubmit(String query)
+                    {
+                        // If the list contains the search query
+                        // than filter the adapter
+                        // using the filter method
+                        // with the query as its argument
+                        List<Review> newReviews = new ArrayList<>();
+                        for (int i = 0; i < reviewList.size(); i++){
+                            if (reviewList.get(i).getDescription().contains(query)){
+                                newReviews.add(reviewList.get(i));
+                            }
+                        }
+                        recyclerAdapter.setReviewList(newReviews);
+
+                        return false;
+                    }
+
+                    // This method is overridden to filter
+                    // the adapter according to a search query
+                    // when the user is typing search
+                    @Override
+                    public boolean onQueryTextChange(String newText)
+                    {
+                        //adapter.getFilter().filter(newText);
+                        return false;
+                    }
+                });
 
         return root;
     }

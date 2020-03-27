@@ -36,6 +36,9 @@ public class ReviewRecyclerAdapter extends RecyclerView.Adapter<ReviewRecyclerAd
 
     @Override
     public void onBindViewHolder(ReviewRecyclerAdapter.MyviewHolder holder, int position) {
+        if (reviewList.get(position) == null){
+            return;
+        }
         holder.title.setText(reviewList.get(position).getTitle() + "   (" + reviewList.get(position).getPlatform().toUpperCase() +
                 ")");
         holder.description.setText(reviewList.get(position).getDescription());
