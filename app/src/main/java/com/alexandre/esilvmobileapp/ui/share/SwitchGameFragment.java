@@ -71,7 +71,7 @@ public class SwitchGameFragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Game>> call, Throwable t) {
-                Log.d("TAG","Response = "+t.toString());
+                Log.d("TAG","ErrResponse = "+t.toString());
             }
         });
 

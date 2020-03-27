@@ -64,7 +64,7 @@ public class GameRecyclerAdapter extends RecyclerView.Adapter<GameRecyclerAdapte
                     MainActivity.currentGame = title.getText().toString();
                     SharedPreferences sharedPref = MainActivity.getInstance().getApplicationContext().getSharedPreferences("MyPref", Context.MODE_WORLD_WRITEABLE);
                     SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putString("current_game", "string value");
+                    editor.putString("current_game", MainActivity.currentGame);
                     editor.commit();
                 }
             });
